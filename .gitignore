@@ -1,3 +1,10 @@
+SOSCSRPG/.vs
+SOSCSRPG/.vs/ProjectEvaluation/soscsrpg.metadata.v7.bin
+SOSCSRPG/.vs/ProjectEvaluation/soscsrpg.projects.v7.bin
+SOSCSRPG/.vs/SOSCSRPG/DesignTimeBuild/.dtbcache.v2
+SOSCSRPG/.vs/SOSCSRPG/v17/.futdcache.v2
+SOSCSRPG/.vs/SOSCSRPG/v17/DocumentLayout.json
+
 
 !**/[Pp]ackages/build/
 !.axoCover/settings.json
@@ -143,9 +150,7 @@ $tf/
 .paket/paket.exe
 .sass-cache/
 .vs/*
-
 .vshistory/
-/SOSCSRPG/.vs
 ASALocalRun/
 AppPackages/
 App_Data/*.ldf
@@ -237,12 +242,3 @@ sql/
 x64/
 x86/
 ~$*
-/SOSCSRPG/.vs
-SOSCSRPG/.vs/ProjectEvaluation/soscsrpg.metadata.v7.bin
-/SOSCSRPG/.vs
-SOSCSRPG/.vs/ProjectEvaluation/soscsrpg.metadata.v7.bin
-SOSCSRPG/.vs/ProjectEvaluation/soscsrpg.projects.v7.bin
-SOSCSRPG/.vs/SOSCSRPG/DesignTimeBuild/.dtbcache.v2
-SOSCSRPG/.vs/SOSCSRPG/v17/.futdcache.v2
-SOSCSRPG/.vs/SOSCSRPG/v17/DocumentLayout.json
-/SOSCSRPG/.vs
