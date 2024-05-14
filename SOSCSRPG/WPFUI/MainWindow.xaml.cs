@@ -25,7 +25,17 @@ namespace WPFUI
 
             _gameSession = new GameSession();
 
-            DataContext = _gameSession;
+            DataContext = _gameSession; // visible in XAML
         }
+
+        private void ButtonXP_OnClick(object sender, RoutedEventArgs e)
+        {
+            _gameSession.CurrentPlayer.ExperiencePoints += 10;
+        }
+        private void ButtonGold_OnClick(object sender, RoutedEventArgs e)
+        {
+            _gameSession.CurrentPlayer.Gold += 3;
+        }
+
     }
 }
