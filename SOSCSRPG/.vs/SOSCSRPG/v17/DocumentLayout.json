@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7E58DC5-00A3-44EA-B5CF-B1B6AB2D3C31}|WPFUI\\WPFUI.csproj|c:\\work\\soscsrpg\\soscsrpg\\wpfui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A7E58DC5-00A3-44EA-B5CF-B1B6AB2D3C31}|WPFUI\\WPFUI.csproj|solutionrelative:wpfui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{32B274A7-2DF2-4029-8355-F79155A95786}|Engine\\Engine.csproj|c:\\work\\soscsrpg\\soscsrpg\\engine\\viewmodels\\gamesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32B274A7-2DF2-4029-8355-F79155A95786}|Engine\\Engine.csproj|solutionrelative:engine\\viewmodels\\gamesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7E58DC5-00A3-44EA-B5CF-B1B6AB2D3C31}|WPFUI\\WPFUI.csproj|c:\\work\\soscsrpg\\soscsrpg\\wpfui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7E58DC5-00A3-44EA-B5CF-B1B6AB2D3C31}|WPFUI\\WPFUI.csproj|solutionrelative:wpfui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32B274A7-2DF2-4029-8355-F79155A95786}|Engine\\Engine.csproj|c:\\work\\soscsrpg\\soscsrpg\\engine\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32B274A7-2DF2-4029-8355-F79155A95786}|Engine\\Engine.csproj|solutionrelative:engine\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,33 +21,36 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\Engine\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "Engine\\Models\\Player.cs",
+              "ToolTip": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\Engine\\Models\\Player.cs",
+              "RelativeToolTip": "Engine\\Models\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T20:05:42.647Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\WPFUI\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WPFUI\\MainWindow.xaml",
-              "ToolTip": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\WPFUI\\MainWindow.xaml",
-              "RelativeToolTip": "WPFUI\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-13T21:43:56.208Z",
+              "Title": "GameSession.cs",
+              "DocumentMoniker": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\Engine\\ViewModels\\GameSession.cs",
+              "RelativeDocumentMoniker": "Engine\\ViewModels\\GameSession.cs",
+              "ToolTip": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\Engine\\ViewModels\\GameSession.cs",
+              "RelativeToolTip": "Engine\\ViewModels\\GameSession.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T20:30:07.909Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\WPFUI\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WPFUI\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\WORK\\SOSCSRPG\\SOSCSRPG\\WPFUI\\MainWindow.xaml.cs",
-              "RelativeToolTip": "WPFUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T21:43:53.633Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
             }
           ]
         }
