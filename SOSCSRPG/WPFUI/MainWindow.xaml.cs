@@ -38,5 +38,7 @@ namespace WPFUI
         {
             _gameSession.MoveSouth();
         }
+
     }
+
 }
