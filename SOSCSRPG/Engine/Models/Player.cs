@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
-
-namespace Engine.Models
+﻿namespace Engine.Models
 {
-    public class Player : INotifyPropertyChanged
+    public class Player : BaseNotification
     {
         private string _name;
         private string _characterClass;
@@ -17,7 +15,7 @@ namespace Engine.Models
             set
             {
                 _name = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged(nameof(Name)); // instead of "Name"
             }
         }
         public string CharacterClass
@@ -26,7 +24,7 @@ namespace Engine.Models
             set
             {
                 _characterClass = value;
-                OnPropertyChanged("CharacterClass");
+                OnPropertyChanged(nameof(CharacterClass)); // instead of "CharacterClass"
             }
         }
         public int HitPoints
@@ -35,7 +33,7 @@ namespace Engine.Models
             set
             {
                 _hitPoints = value;
-                OnPropertyChanged("HitPoints");
+                OnPropertyChanged(nameof(HitPoints)); // instead of "HitPoints"
             }
         }
 
@@ -45,7 +43,7 @@ namespace Engine.Models
             set
             {
                 _experiencePoints = value;
-                OnPropertyChanged("ExperiencePoints");
+                OnPropertyChanged(nameof(ExperiencePoints)); // instead of "ExperiencePoints"
             }
         }
         public int Level
@@ -54,7 +52,7 @@ namespace Engine.Models
             set
             {
                 _level = value;
-                OnPropertyChanged("Level");
+                OnPropertyChanged(nameof(Level)); // instead of "Level"
             }
         }
         public int Gold
@@ -63,16 +61,10 @@ namespace Engine.Models
             set
             {
                 _gold = value;
-                OnPropertyChanged("Gold");
+                OnPropertyChanged(nameof(Gold)); // instead of "Gold"
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
 

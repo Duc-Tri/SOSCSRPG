@@ -1,10 +1,9 @@
 ﻿using Engine.Factories;
 using Engine.Models;
-using System.ComponentModel;
 
 namespace Engine.ViewModels
 {
-    public class GameSession : INotifyPropertyChanged
+    public class GameSession : BaseNotification
     {
         public Player CurrentPlayer { get; set; }
 
@@ -19,11 +18,11 @@ namespace Engine.ViewModels
             set
             {
                 _currentLocation = value;
-                OnPropertyChanged("CurrentLocation");
-                OnPropertyChanged("HasLocationToNorth");
-                OnPropertyChanged("HasLocationToEast");
-                OnPropertyChanged("HasLocationToWest");
-                OnPropertyChanged("HasLocationToSouth");
+                OnPropertyChanged(nameof(CurrentLocation)); // instead of "CurrentLocation"
+                OnPropertyChanged(nameof(HasLocationToNorth)); // instead of "HasLocationToNorth"
+                OnPropertyChanged(nameof(HasLocationToEast));  // instead of "HasLocationToEast"
+                OnPropertyChanged(nameof(HasLocationToWest));  // instead of "HasLocationToWest"
+                OnPropertyChanged(nameof(HasLocationToSouth));  // instead of "HasLocationToSouth"
             }
         }
         public bool HasLocationToNorth { get { return CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1) != null; } }
@@ -47,12 +46,6 @@ namespace Engine.ViewModels
             CurrentWorld = factory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, 0);
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public void MoveNorth()
