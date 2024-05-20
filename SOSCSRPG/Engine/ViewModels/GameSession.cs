@@ -39,37 +39,42 @@ namespace Engine.ViewModels
 
         public GameSession()
         {
-            CurrentPlayer = new Player();
-            CurrentPlayer.Name = "Scott";
-            CurrentPlayer.Gold = 1_000_000;
-            CurrentPlayer.CharacterClass = "Fighter";
-            CurrentPlayer.HitPoints = 10;
-            CurrentPlayer.ExperiencePoints = 0;
-            CurrentPlayer.Level = 1;
+            CurrentPlayer = new Player
+            {
+                Name = "Scott",
+                CharacterClass = "Fighter",
+                HitPoints = 10,
+                Gold = 1_000_000,
+                ExperiencePoints = 0,
+                Level = 1
+            };
 
-            WorldFactory factory = new WorldFactory();
-            CurrentWorld = factory.CreateWorld();
+            CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, 0);
         }
 
         public void MoveNorth()
         {
-            CurrentLocation = LocationAtNorth;
+            if (HasLocationToNorth)
+                CurrentLocation = LocationAtNorth;
         }
         public void MoveSouth()
         {
-            CurrentLocation = LocationAtSouth;
+            if (HasLocationToSouth)
+                CurrentLocation = LocationAtSouth;
         }
 
         public void MoveEast()
         {
-            CurrentLocation = LocationAtEast;
+            if (HasLocationToEast)
+                CurrentLocation = LocationAtEast;
         }
 
         public void MoveWest()
         {
-            CurrentLocation = LocationAtWest;
+            if (HasLocationToWest)
+                CurrentLocation = LocationAtWest;
         }
 
     }
