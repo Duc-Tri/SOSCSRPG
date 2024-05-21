@@ -1,4 +1,6 @@
-﻿namespace Engine.Models
+﻿using System.Collections.ObjectModel;
+
+namespace Engine.Models
 {
     public class Player : BaseNotification
     {
@@ -63,6 +65,14 @@
                 _gold = value;
                 OnPropertyChanged(nameof(Gold)); // instead of "Gold"
             }
+        }
+
+        // automatically handles notifications
+        public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public Player()
+        {
+            Inventory = new ObservableCollection<GameItem>();
         }
 
     }

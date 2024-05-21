@@ -20,7 +20,7 @@ namespace Engine.Factories
             GameItem standardItem = _standardGameItems.FirstOrDefault(item => item.ItemTypeID == itemTypeID);
 
             if (standardItem != null)
-                return standardItem?.Clone();
+                return standardItem.Clone();
 
             return null;
         }
