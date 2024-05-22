@@ -11,6 +11,10 @@ namespace Engine.Models
         private int _level;
         private int _gold;
 
+        // automatically handles notifications
+        public ObservableCollection<GameItem> Inventory { get; set; }
+        public ObservableCollection<QuestStatus> Quests { get; set; }
+
         public string Name
         {
             get { return _name; }
@@ -67,12 +71,11 @@ namespace Engine.Models
             }
         }
 
-        // automatically handles notifications
-        public ObservableCollection<GameItem> Inventory { get; set; }
 
         public Player()
         {
             Inventory = new ObservableCollection<GameItem>();
+            Quests = new ObservableCollection<QuestStatus>();
         }
 
     }

@@ -2,7 +2,7 @@
 
 namespace Engine.Factories
 {
-    internal class QuestFactory
+    public class QuestFactory
     {
         private static readonly List<Quest> _quests;
 
@@ -23,7 +23,7 @@ namespace Engine.Factories
                 25, 10, rewardItems));
         }
 
-        static Quest GetQuestByID(int id)
+        public static Quest GetQuestByID(int id)
         {
             return _quests.FirstOrDefault(quest => quest.ID == id);
         }

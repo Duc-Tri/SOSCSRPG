@@ -1,6 +1,6 @@
 ﻿namespace Engine.Models
 {
-    internal class ItemQuantity
+    public class ItemQuantity
     {
         public int ItemID { get; set; }
         public int Quantity { get; set; }
