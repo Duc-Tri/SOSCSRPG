@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
-    internal class Monster : BaseNotification
+    public class Monster : BaseNotification
     {
         private int _hitPoints;
         public string Name { get; private set; }
