@@ -25,12 +25,11 @@ namespace Engine.Models
         public Monster(string name, string imageName, int maximumHitpoints, int hitPoints, int rewardExperiencePoints, int rewardGold)
         {
             Name = name;
-            ImageName = string.Format("/Engine;component/Images/Monsters/ {0}", imageName);
+            ImageName = string.Format("/Engine;component/Images/Monsters/{0}", imageName);
             MaximumHitPoints = maximumHitpoints;
             HitPoints = hitPoints;
             RewardExperiencePoints = rewardExperiencePoints;
             RewardGold = rewardGold;
-
             Inventory = new ObservableCollection<ItemQuantity>();
         }
 

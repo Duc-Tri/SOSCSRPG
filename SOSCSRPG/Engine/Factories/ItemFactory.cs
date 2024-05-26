@@ -14,10 +14,10 @@ namespace Engine.Factories
                 new Weapon(1002, "Rusty Sword", 5, 1, 3),
                 new GameItem(9001, "Snake Fang",  1),
                 new GameItem(9002, "Snake Skin",  2),
-                new GameItem(9003, "Rat tail",  1),
-                new GameItem(9004, "Rat fur",  2),
-                new GameItem(9005, "Spider fangg",  1),
-                new GameItem(9006, "Spider silk",  2),
+                new GameItem(9003, "Rat Tail",  1),
+                new GameItem(9004, "Rat Fur",  2),
+                new GameItem(9005, "Spider Fang",  1),
+                new GameItem(9006, "Spider Silk",  2),
             ];
         }
 
