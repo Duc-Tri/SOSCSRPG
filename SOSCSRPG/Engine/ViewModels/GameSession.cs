@@ -1,10 +1,14 @@
-﻿using Engine.Factories;
+﻿using Engine.EventArgs;
+using Engine.Factories;
 using Engine.Models;
 
 namespace Engine.ViewModels
 {
     public class GameSession : BaseNotification
     {
+        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
+
+        #region Properties
         public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
 
@@ -28,6 +32,7 @@ namespace Engine.ViewModels
                 GetMonsterAtLocation();
             }
         }
+        #endregion
 
         private Location LocationAtNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
         private Location LocationAtSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
@@ -106,6 +111,11 @@ namespace Engine.ViewModels
         private void GetMonsterAtLocation()
         {
             CurrentMonster = CurrentLocation.GetMonster();
+        }
+
+        private void RaiseMessage(string message)
+        {
+            OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
         }
 
     }
