@@ -32,29 +32,36 @@ namespace Engine.ViewModels
                 GetMonsterAtLocation();
             }
         }
-        #endregion
-
-        private Location LocationAtNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
-        private Location LocationAtSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
-        private Location LocationAtEast => CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
-        private Location LocationAtWest => CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
-
         public Monster CurrentMonster
         {
             get { return _currentMonster; }
             set
             {
                 _currentMonster = value;
+
                 OnPropertyChanged(nameof(CurrentMonster));
                 OnPropertyChanged(nameof(HasMonster));
+
+                if (CurrentMonster != null)
+                {
+                    RaiseMessage("");
+                    RaiseMessage($"You see a {CurrentMonster.Name} here!");
+                }
             }
         }
+
+        private Location LocationAtNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
+        private Location LocationAtSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+        private Location LocationAtEast => CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
+        private Location LocationAtWest => CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
 
         public bool HasLocationToNorth { get { return LocationAtNorth != null; } }
         public bool HasLocationToSouth { get { return LocationAtSouth != null; } }
         public bool HasLocationToEast { get { return LocationAtEast != null; } }
         public bool HasLocationToWest { get { return LocationAtWest != null; } }
         public bool HasMonster => CurrentMonster != null;
+
+        #endregion
 
         public GameSession()
         {

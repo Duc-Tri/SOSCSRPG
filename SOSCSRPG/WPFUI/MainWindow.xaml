@@ -72,8 +72,9 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Game Messages -->
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gainsboro" BorderThickness="1">
-                <RichTextBox x:Name="GameMessage" Background="Beige" VerticalScrollBarVisibility="Auto">
+                <RichTextBox x:Name="GameMessages" Background="Beige" VerticalScrollBarVisibility="Auto">
                     <RichTextBox.Resources>
                         <Style TargetType="{x:Type Paragraph}">
                             <Setter Property="Margin" Value="0"/>
