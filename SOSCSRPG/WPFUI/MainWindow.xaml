@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:Engine.ViewModels;assembly=Engine"
+        
         d:DataContext="{d:DesignInstance viewModels:GameSession}"
-        xmlns:local="clr-namespace:WPFUI"
+        
         mc:Ignorable="d"
         FontSize="11pt"
         Title="SOS C# RPG" Height="768" Width="1024" Background="#FF777777">
@@ -119,6 +120,7 @@
 
         </Grid>
 
+        <!-- Inventory & Quests -->
         <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood">
             <TabControl>
                 <TabItem Header="Inventory">
@@ -142,6 +144,7 @@
         </Grid>
 
 
+        <!-- Action Controls -->
         <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -151,6 +154,25 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="255"/>
             </Grid.ColumnDefinitions>
+
+            
+            <!-- Combat Controls-->
+            <Grid Grid.Row="0" Grid.Column="0" Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding CurrentPlayer.Weapons}" SelectedItem="{Binding CurrentWeapon}" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+
+                <Button Grid.Row="0" Grid.Column="2" Content="Use" Click="OnClick_AttackMonster"/>
+            </Grid>
 
             <Grid Grid.Row="0" Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -172,6 +194,7 @@
             </Grid>
 
         </Grid>
+        
 
     </Grid>
 

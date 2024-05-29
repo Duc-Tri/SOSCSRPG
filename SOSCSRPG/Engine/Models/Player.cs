@@ -13,6 +13,9 @@ namespace Engine.Models
 
         // automatically handles notifications
         public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public List<GameItem> Weapons => Inventory.Where(i => i is Weapon).ToList();
+
         public ObservableCollection<QuestStatus> Quests { get; set; }
 
         public string Name
@@ -75,6 +78,13 @@ namespace Engine.Models
         {
             Inventory = new ObservableCollection<GameItem>();
             Quests = new ObservableCollection<QuestStatus>();
+        }
+
+        public void AddItemToInventory(GameItem item)
+        {
+            Inventory.Add(item);
+
+            OnPropertyChanged(nameof(Weapons));
         }
 
     }
