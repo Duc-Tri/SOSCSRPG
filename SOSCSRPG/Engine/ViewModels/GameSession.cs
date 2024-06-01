@@ -1,7 +1,6 @@
 ﻿using Engine.EventArgs;
 using Engine.Factories;
 using Engine.Models;
-using System.Xml;
 
 namespace Engine.ViewModels
 {
@@ -15,6 +14,7 @@ namespace Engine.ViewModels
 
         private Location _currentLocation;
         private Monster _currentMonster;
+        private Trader _currentTrader;
 
         public Location CurrentLocation
         {
@@ -34,6 +34,51 @@ namespace Engine.ViewModels
                 GetMonsterAtLocation();
             }
         }
+
+        public Monster CurrentMonster
+        {
+            get { return _currentMonster; }
+            set
+            {
+                _currentMonster = value;
+
+                OnPropertyChanged(nameof(CurrentMonster));
+                OnPropertyChanged(nameof(HasMonster));
+
+                if (CurrentMonster != null)
+                {
+                    RaiseMessage("");
+                    RaiseMessage($"You see a {CurrentMonster.Name} here!");
+                }
+            }
+        }
+
+        public Trader CurrentTrader
+        {
+            get { return _currentTrader; }
+            set
+            {
+                _currentTrader = value;
+                OnPropertyChanged(nameof(CurrentTrader));
+                OnPropertyChanged(nameof(HasTrader));
+            }
+        }
+
+        public Weapon CurrentWeapon { get; set; }
+        private Location LocationAtNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
+        private Location LocationAtSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+        private Location LocationAtEast => CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
+        private Location LocationAtWest => CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
+
+        public bool HasLocationToNorth { get { return LocationAtNorth != null; } }
+        public bool HasLocationToSouth { get { return LocationAtSouth != null; } }
+        public bool HasLocationToEast { get { return LocationAtEast != null; } }
+        public bool HasLocationToWest { get { return LocationAtWest != null; } }
+        public bool HasMonster => CurrentMonster != null;
+
+        public bool HasTrader => CurrentTrader != null;
+
+        #endregion
 
         private void CompleteQuestsAtLocation()
         {
@@ -75,37 +120,6 @@ namespace Engine.ViewModels
                 }
             }
         }
-
-        public Monster CurrentMonster
-        {
-            get { return _currentMonster; }
-            set
-            {
-                _currentMonster = value;
-
-                OnPropertyChanged(nameof(CurrentMonster));
-                OnPropertyChanged(nameof(HasMonster));
-
-                if (CurrentMonster != null)
-                {
-                    RaiseMessage("");
-                    RaiseMessage($"You see a {CurrentMonster.Name} here!");
-                }
-            }
-        }
-        public Weapon CurrentWeapon { get; set; }
-        private Location LocationAtNorth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
-        private Location LocationAtSouth => CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
-        private Location LocationAtEast => CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
-        private Location LocationAtWest => CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
-
-        public bool HasLocationToNorth { get { return LocationAtNorth != null; } }
-        public bool HasLocationToSouth { get { return LocationAtSouth != null; } }
-        public bool HasLocationToEast { get { return LocationAtEast != null; } }
-        public bool HasLocationToWest { get { return LocationAtWest != null; } }
-        public bool HasMonster => CurrentMonster != null;
-
-        #endregion
 
         public GameSession()
         {

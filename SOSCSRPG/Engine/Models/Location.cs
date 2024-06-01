@@ -4,6 +4,7 @@ namespace Engine.Models
 {
     public class Location
     {
+        #region Properties
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
         public string Name { get; set; }
@@ -12,6 +13,9 @@ namespace Engine.Models
         public List<Quest> QuestsAvailableHere { get; set; } = new List<Quest>();
 
         public List<MonsterEncounter> MonstersHere { get; set; } = new List<MonsterEncounter>();
+
+        public Trader TraderHere { get; set; }
+        #endregion
 
         public void AddMonster(int monsterID, int chanceOfEncountering)
         {
