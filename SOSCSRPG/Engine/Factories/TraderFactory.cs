@@ -23,7 +23,12 @@ namespace Engine.Factories
 
         public static Trader GetTraderByName(string name)
         {
-            return _traders.FirstOrDefault(t => t.Name == name);
+            Trader trader = _traders.FirstOrDefault(t => t.Name == name);
+
+            if (trader == null)
+                return new Trader("GOLLUM");
+
+            return trader;
         }
 
         private static void AddTraderToList(Trader trader)
