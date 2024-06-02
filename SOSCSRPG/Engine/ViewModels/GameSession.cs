@@ -6,9 +6,9 @@ namespace Engine.ViewModels
 {
     public class GameSession : BaseNotification
     {
-        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
-
         #region Properties
+
+        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
         public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
 

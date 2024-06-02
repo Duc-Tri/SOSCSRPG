@@ -4,6 +4,7 @@ namespace Engine.Models
 {
     public class Monster : BaseNotification
     {
+        #region Properties
         private int _hitPoints;
         public string Name { get; private set; }
         public string ImageName { get; set; }
@@ -24,6 +25,8 @@ namespace Engine.Models
         public int RewardExperiencePoints { get; private set; }
         public int RewardGold { get; private set; }
         public ObservableCollection<ItemQuantity> Inventory { get; set; }
+
+        #endregion
 
         public Monster(string name, string imageName, int maximumHitpoints, int hitPoints,
             int maximumDamge, int minimumDamge,

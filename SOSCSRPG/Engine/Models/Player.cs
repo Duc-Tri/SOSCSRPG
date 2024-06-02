@@ -5,6 +5,7 @@ namespace Engine.Models
     public class Player : BaseNotification
     {
         #region Properties
+
         private string _name;
         private string _characterClass;
         private int _hitPoints;
