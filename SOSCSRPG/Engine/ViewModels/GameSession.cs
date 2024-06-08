@@ -110,7 +110,6 @@ namespace Engine.ViewModels
                         foreach (ItemQuantity itemQuantity in quest.RewardItems)
                         {
                             GameItem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
-
                             CurrentPlayer.AddItemToInventory(rewardItem);
                             RaiseMessage($"Yout receive {rewardItem.Name}");
                         }

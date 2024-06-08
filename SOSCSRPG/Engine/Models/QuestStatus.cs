@@ -10,5 +10,7 @@
             PlayerQuest = quest;
             IsCompleted = false;
         }
+
     }
+
 }
