@@ -5,6 +5,7 @@ namespace Engine.Models
     public class Location
     {
         #region Properties
+
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
         public string Name { get; set; }
@@ -21,16 +22,12 @@ namespace Engine.Models
         public void AddMonster(int monsterID, int chanceOfEncountering)
         {
             if (MonstersHere.Exists(m => m.MonsterID == monsterID))
-            {
                 // This monster has already been added to this location.
                 // So, overwrite the ChanceOfEncountering with the new number
                 MonstersHere.First(m => m.MonsterID == monsterID).ChanceOfEncountering = chanceOfEncountering;
-            }
             else
-            {
                 // This monster is not already at this location, so add it
                 MonstersHere.Add(new MonsterEncounter(monsterID, chanceOfEncountering));
-            }
         }
 
         public Monster GetMonster()
